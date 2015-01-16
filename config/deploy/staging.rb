@@ -43,3 +43,10 @@ role :db,  %w{aws_test}
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:reload'
+  end
+end
