@@ -34,6 +34,13 @@ set :repo_url, 'git@github.com:matscube/aws_test.git'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+# capistrano-rbenv
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.0.0-p247'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
+
 namespace :deploy do
 
   after :restart, :clear_cache do
