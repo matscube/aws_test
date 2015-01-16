@@ -44,6 +44,8 @@ role :db,  %w{aws_test}
 #     # password: 'please use keys'
 #   }
 
+set :stage, :staging
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
