@@ -9,7 +9,7 @@ role :web, %w{aws_test}
 role :db,  %w{aws_test}
 
 set :rails_env, 'staging'
-
+set :stage, :staging
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server definition into the

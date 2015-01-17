@@ -44,6 +44,9 @@ set :rbenv_ruby, '2.0.0-p598'
 # set :rbenv_roles, :all # default value
 # set :rbenv_custom_path, "~/.rbenv/bin/rbenv"
 
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/assets}
+
+
 namespace :deploy do
 
   after :restart, :clear_cache do
@@ -56,3 +59,12 @@ namespace :deploy do
   end
 
 end
+
+namespace :deploy do
+  desc 'Restart application'
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+end
+after 'deploy:publishing', 'deploy:restart'
+
