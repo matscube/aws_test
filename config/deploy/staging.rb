@@ -8,6 +8,7 @@ role :app, %w{aws_test}
 role :web, %w{aws_test}
 role :db,  %w{aws_test}
 
+set :rails_env, 'staging'
 
 # Extended Server Syntax
 # ======================
@@ -52,3 +53,4 @@ namespace :deploy do
     invoke 'unicorn:reload'
   end
 end
+

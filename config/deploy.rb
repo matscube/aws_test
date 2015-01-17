@@ -38,11 +38,11 @@ set :repo_url, 'git@github.com:matscube/aws_test.git'
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 #set :rbenv_ruby, '2.0.0-p247'
 set :rbenv_ruby, '2.0.0-p598'
-set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+# set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 #set :rbenv_prefix, "#{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-set :rbenv_roles, :all # default value
-set :rbenv_custom_path, "~/.rbenv/bin/rbenv"
+# set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+# set :rbenv_roles, :all # default value
+# set :rbenv_custom_path, "~/.rbenv/bin/rbenv"
 
 namespace :deploy do
 
